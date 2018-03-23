@@ -1,0 +1,78 @@
+<!-- Skills page -->
+
+<ion-header>
+    <ion-navbar color="primary"> <!--added color primary 18.10.2017-->
+      <ion-buttons start>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-buttons>
+
+        <ion-buttons end>
+          <button ion-button (click)="logout()">
+            <ion-icon name="log-out"></ion-icon>
+          </button>
+        </ion-buttons>
+
+     <ion-title>Skills</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div padding>
+    <ion-segment [(ngModel)]="skill">
+      <ion-segment-button value="Code">
+        Code
+      </ion-segment-button>
+      <ion-segment-button value="Certifications">
+        Certifications
+      </ion-segment-button>
+      <ion-segment-button value="Cloud technologies">
+        Cloud technologies
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="skill">
+    <ion-list *ngSwitchCase="'Code'">
+      <ion-item>JavaScript</ion-item>
+      <ion-item>Python</ion-item>
+      <ion-item>NodeJs</ion-item>
+      <ion-item>HTML</ion-item>
+      <ion-item>CSS</ion-item>
+      <ion-item>Ionic</ion-item>
+      <ion-item>Bootstrap</ion-item>
+      <ion-item>XML/JSON</ion-item>
+      <ion-item>C++</ion-item>
+      <ion-item>C</ion-item>
+      <ion-item>Go</ion-item>
+      <ion-item>Assembly x64</ion-item>
+      <ion-item>Basic</ion-item>
+      <ion-item>Java</ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Certifications'">
+      <ion-item>APIOps API security professional</ion-item>
+      <ion-item>APIOps API developer</ion-item>
+      <ion-item>Certified Scrum Master</ion-item>
+      <ion-item>AWS architect</ion-item>
+      <ion-item>Certified ethical hacker</ion-item>
+      <ion-item>Advanced cyber threat intelligence</ion-item>
+      <ion-item>Cypersecurity Pro</ion-item>
+      <ion-item>Forensic Investigation</ion-item>
+    </ion-list>
+  
+
+    <ion-list *ngSwitchCase="'Cloud technologies'">
+        <ion-item>AWS</ion-item>
+        <ion-item>Google Cloud</ion-item>
+        <ion-item>Azure</ion-item>
+        <ion-item>IBM Cloud</ion-item>
+      </ion-list>
+  </div>
+
+</ion-content>
+
+

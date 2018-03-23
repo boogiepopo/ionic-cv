@@ -1,0 +1,35 @@
+<!-- Experience page -->
+
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons start>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-buttons>
+
+        <ion-buttons end>
+          <button ion-button (click)="logout()">
+            <ion-icon name="log-out"></ion-icon>
+          </button>
+        </ion-buttons>
+
+     <ion-title>Experience</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+        <ion-list>
+            <button detail-none (click)="expandItem(item)" ion-item *ngFor="let item of items" text-wrap> <!-- text-wrap allows long text inside item element -->
+                <h2>{{item.title}}</h2>
+                <p>{{item.company}} • {{item.time}}</p>
+                <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded"> <!-- To make this work, add the component to thisPage.module.ts declarations, but not to the app.module.ts -->
+                {{item.desc}}
+                </expandable>
+            </button>
+        </ion-list>
+  </ion-content>
+
+
